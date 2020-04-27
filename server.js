@@ -58,6 +58,10 @@ var initDb = function(callback) {
   var mongodb = require('mongodb');
   if (mongodb == null) return;
 
+  
+  //Filippo Code
+  mongoURL = "mongodb+srv://main_user:main_password@povcluster.kxao9.mongodb.net/test?retryWrites=true&w=majority";
+  //End Filippo Code
   mongodb.connect(mongoURL, function(err, conn) {
     if (err) {
       callback(err);
@@ -68,7 +72,7 @@ var initDb = function(callback) {
     dbDetails.databaseName = db.databaseName;
     dbDetails.url = mongoURLLabel;
     dbDetails.type = 'MongoDB';
-
+    
     console.log('Connected to MongoDB at: %s', mongoURL);
   });
 };
