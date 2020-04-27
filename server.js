@@ -60,7 +60,8 @@ var initDb = function(callback) {
 
   
   //Filippo Code
-  //mongoURL = "mongodb+srv://main_user:main_password@povcluster.kxao9.mongodb.net/test?retryWrites=true&w=majority";
+  mongoURL = "mongodb://main_user:main_password@povcluster.kxao9.mongodb.net/sampledb”;" 
+  		
   //End Filippo Code
   mongodb.connect(mongoURL, function(err, conn) {
     if (err) {
@@ -69,7 +70,7 @@ var initDb = function(callback) {
     }
     console.log('Filippo --> mongoURL: %s', mongoURL);
     console.log('Filippo --> db: %s', db);
-    console.log('Filippo --> conn: %s', conn);
+    console.log('Filippo --> conn: %s', conn); 
     db = conn;
     dbDetails.databaseName = db.databaseName;
     dbDetails.url = mongoURLLabel;
