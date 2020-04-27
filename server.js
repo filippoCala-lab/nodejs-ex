@@ -67,13 +67,13 @@ var initDb = function(callback) {
       callback(err);
       return;
     }
-
+    console.log('Filippo --> db: %s', db);
+    console.log('Filippo --> conn: %s', conn);
     db = conn;
     dbDetails.databaseName = db.databaseName;
     dbDetails.url = mongoURLLabel;
     dbDetails.type = 'MongoDB';
-    
-    console.log('Connected to MongoDB at: %s', mongoURL);
+    console.log('Filippo --> Connected to MongoDB at: %s', mongoURL);
   });
 };
 
