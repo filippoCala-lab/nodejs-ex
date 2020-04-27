@@ -61,16 +61,16 @@ var initDb = function(callback) {
   
   //Filippo Code
   mongoURL = "mongodb://main_user:main_password@povcluster.kxao9.mongodb.net/sampledb”;" 
-  		
+  console.log('Filippo --> mongoURL: %s', mongoURL);
+  console.log('Filippo --> db: %s', db);
+  console.log('Filippo --> conn: %s', conn); 
   //End Filippo Code
   mongodb.connect(mongoURL, function(err, conn) {
     if (err) {
       callback(err);
       return;
     }
-    console.log('Filippo --> mongoURL: %s', mongoURL);
-    console.log('Filippo --> db: %s', db);
-    console.log('Filippo --> conn: %s', conn); 
+    
     db = conn;
     dbDetails.databaseName = db.databaseName;
     dbDetails.url = mongoURLLabel;
